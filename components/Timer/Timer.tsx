@@ -6,7 +6,7 @@ export interface TimerProps {
   date: Date | number;
 }
 
-const Timer: React.FC<TimerProps> = ({ date }) => {
+export const Timer: React.FC<TimerProps> = ({ date }) => {
 
 const renderer: CountdownRendererFn = ({ hours, minutes, seconds, completed }) => {
   return !completed?
@@ -20,4 +20,3 @@ return <Countdown
   />
 };
 
-export default Timer;
