@@ -1,14 +1,17 @@
 $screen-sm-min: 768px;
-$brand-primary: blue;
-$link-color: $brand-primary;
+$link-color: white;
 $link-hover-color: darken($link-color, 15%);
 $warm-gray: #e9e7df;
 $navbarBgColor: black;
+$teal: teal;
 
 .navbar {
+  padding: 0 3rem;
   position: fixed;
   width: 100%;
   background-color: $navbarBgColor;
+  font-weight: bold;
+  font-size: 1.1rem;
   top: 0;
   left: 0;
   z-index: 99;
@@ -16,16 +19,6 @@ $navbarBgColor: black;
   visibility: visible;
   transform: none;
   transition: all 400ms ease-in-out;
-
-  // &.dark {
-  //   background-color: $black;
-
-  //   @media (min-width: $screen-sm-min) {
-  //     a {
-  //       color: $white;
-  //     }
-  //   }
-  // }
 
   &.top {
     background-color: transparent;
@@ -37,9 +30,9 @@ $navbarBgColor: black;
     transform: translate(0, -100%);
   }
 
-  // @media (max-width: $screen-sm-min) {
-  //   min-height: 67px;
-  // }
+  @media (max-width: $screen-sm-min) {
+    min-height: 67px;
+  }
 }
 
 .container {
@@ -48,17 +41,17 @@ $navbarBgColor: black;
   align-items: center;
   min-height: 65px;
 
-  // @media (max-width: $screen-sm-min) {
-  //   min-height: 57px;
-  //   flex-direction: column;
-  // }
+  @media (max-width: $screen-sm-min) {
+    min-height: 57px;
+    flex-direction: column;
+  }
 }
 
 .linkList {
   display: flex;
   align-items: center;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 auto;
   list-style-type: none;
 
   li {
@@ -66,9 +59,10 @@ $navbarBgColor: black;
   }
 
   @media (max-width: $screen-sm-min) {
+    margin: 0;
     flex-direction: column;
     width: 100vw;
-    background-color: white;
+    background-color: black;
     max-height: 0;
     transition: max-height 0.3s ease;
     overflow: hidden;
@@ -76,7 +70,8 @@ $navbarBgColor: black;
     &.showMenu {
       max-height: 500px;
       transition: max-height 0.5s ease;
-      // border-top: 1px solid darken($warm-gray, 8%);
+      border-bottom: 1px solid darken($warm-gray, 8%);
+      border-top: 1px solid darken($warm-gray, 8%);
     }
 
     li {
@@ -100,7 +95,6 @@ $navbarBgColor: black;
 }
 
 .logoContainer {
-  margin-right: auto;
   align-items: center;
 
   @media (max-width: $screen-sm-min) {
@@ -114,21 +108,14 @@ $navbarBgColor: black;
 
 .logo {
   display: block;
-
-  // @media (max-width: $screen-sm-min) {
-  //   height: 100%;
-  //   margin-right: auto;
-  //   display: flex;
-  //   align-items: center;
-  // }
+  color: white;
+  font-size: 1.5rem;
 }
 
 .hamburger {
-  border: 1px solid darken($warm-gray, 8%);
-  border-radius: 4px;
   background-color: transparent;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  border: none;
+  margin: 15px 0 15px auto;
   padding: 0;
   cursor: pointer;
   display: none;
@@ -143,7 +130,7 @@ $navbarBgColor: black;
   height: 35px;
   position: relative;
   transition: 0.5s ease-in-out;
-
+  margin-left: auto;
   span {
     position: absolute;
     height: 2px;
@@ -152,7 +139,7 @@ $navbarBgColor: black;
     margin: auto;
     left: 0;
     right: 0;
-    background: #000;
+    background: white;
     opacity: 1;
     transition: 0.25s ease-in-out;
     transform-origin: left center;
@@ -170,10 +157,6 @@ $navbarBgColor: black;
       transform-origin: left center;
     }
   }
-
-  //   &.dark span {
-  //     background: white;
-  //   }
 
   &.open {
     span {
@@ -198,8 +181,15 @@ $navbarBgColor: black;
 }
 
 .aquarium {
-  background-color: teal;
+  background-color: $teal;
+  padding: 8px 24px;
+  border: none;
   font-weight: bold;
   color: white;
-  border-radius: 4px;
+  border-radius: 24px;
+  font-size: 1.1rem;
+}
+
+.marine {
+  color: $teal;
 }

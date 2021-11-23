@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import classnames from "classnames";
-
-
 import styles from "./Navbar.module.scss";
 
 const textLinks = [
@@ -54,12 +52,10 @@ const useHideOnScroll = () => {
 
 const useCheckTop = () => {
   const [top, setTop] = useState(true);
-  const [hideBar, setHideBar] = useState(true);
 
   const handleScroll = () => {
     const top = window.pageYOffset || document.documentElement.scrollTop;
     setTop(top === 0);
-    setHideBar(top < 70);
   };
 
   useEffect(() => {
@@ -69,14 +65,14 @@ const useCheckTop = () => {
     };
   }, []);
 
-  return { top, hideBar };
+  return { top };
 };
 
 export const Navbar: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const isHidden = useHideOnScroll();
-  const { top, hideBar } = useCheckTop();
+  const { top } = useCheckTop();
 
   return (
     <nav
@@ -85,12 +81,11 @@ export const Navbar: React.FC = () => {
         [styles.hidden]: isHidden
       })}
     >
-
       <div className={styles.container}>
         <div className={styles.logoContainer}>
           <Link href="/">
             <a className={styles.logo}>
-              Meta<span>Marine</span>
+              Meta<span className={styles.marine}>Marine</span>
             </a>
           </Link>
           <button

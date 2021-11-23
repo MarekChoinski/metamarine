@@ -10,8 +10,8 @@ export const Timer: React.FC<TimerProps> = ({ date }) => {
 
 const renderer: CountdownRendererFn = ({ hours, minutes, seconds, completed }) => {
   return !completed?
-        (<span className={styles.time}>{hours}:{minutes}:{seconds}</span>) :
-        (<span>You are good to go!</span>);
+        (<span className={styles.timer}>{hours}:{minutes}:{seconds}</span>) :
+        (<span className={styles.timer}>You are good to go!</span>);
 };
 
 return <Countdown
