@@ -10,7 +10,7 @@ $teal: teal;
   position: fixed;
   width: 100%;
   background-color: $navbarBgColor;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.1rem;
   top: 0;
   left: 0;
@@ -184,10 +184,10 @@ $teal: teal;
   background-color: $teal;
   padding: 8px 24px;
   border: none;
-  font-weight: bold;
+  font-weight: 600;
   color: white;
   border-radius: 24px;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .marine {
