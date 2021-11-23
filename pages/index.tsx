@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
+import p from '../utils/prefixImages';
 
 const Home: NextPage = () => {
   return (
@@ -14,7 +15,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         test basePath
-        <img src="/images/test.png" />     
+        <img src={p("/images/test.png")} />     
          </main>
     </div>
   )
