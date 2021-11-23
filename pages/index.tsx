@@ -13,7 +13,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        test
+        test basePath
         <img src="/images/test.png" />     
          </main>
     </div>
