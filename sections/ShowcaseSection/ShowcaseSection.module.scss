@@ -1,0 +1,89 @@
+.container {
+  width: 100vw;
+  background-color: black;
+  box-sizing: border-box;
+  padding-bottom: 10rem;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.header {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  padding: 8rem 0 12rem 0;
+  font-weight: 500;
+
+  background: linear-gradient(
+    45deg,
+    hsl(181, 100%, 50%),
+    #2c0bd0,
+    hsl(181, 100%, 50%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.dual {
+  width: 80%;
+  max-width: 1300px;
+  display: flex;
+  height: auto;
+  color: white;
+  margin: 0 auto;
+  // flex-direction: column;
+}
+
+.text {
+  width: 40%;
+  padding-right: 2rem;
+  h1 {
+    @extend .header;
+    padding: 0;
+    font-size: 2rem;
+    text-align: left;
+    background: linear-gradient(
+      45deg,
+      hsl(324, 100%, 50%),
+      rgb(5, 222, 218),
+      hsl(324, 100%, 50%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+  }
+
+  p {
+    margin-top: 2rem;
+    line-height: 2;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background: none;
+    color: white;
+  }
+}
+
+.fish {
+  width: 60%;
+  // margin: 3rem auto;
+  padding-left: 6rem;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
