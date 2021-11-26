@@ -16,8 +16,12 @@ return (
   className={styles.container}
   >
     <div className={styles.hero}>
-      <img src={p("hero.jpg")} alt="Hero"/>
-      <Timer date={Date.now() + 50000}/>
+      <img src={p("hero.png")} alt="Hero"/>
+      <div className={styles.textBox}>
+        <p>release date</p>
+        <h1>DECEMBER 2021</h1>
+      </div>
+      {/* <Timer date={Date.now() + 50000}/> */}
     </div>
   </section>
 )
