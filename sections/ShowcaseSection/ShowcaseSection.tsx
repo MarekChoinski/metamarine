@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./ShowcaseSection.module.scss";
 import p from '../../utils/prefixImages';
 import { Timer } from "../../components/Timer/Timer";
+import { useVisibility } from "../../utils/useVisibility";
+import classnames from "classnames";
+import "animate.css/animate.min.css";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 // for file in *.png ; do ffmpeg -i "$file" -vf scale=900:-1 "small-${file}"; done
 // for file in small-* ; do ffmpeg -i "$file" -vf  "crop=750:500:30:225" "crop-${file}"; done
@@ -14,7 +18,7 @@ export interface ShowcaseSectionProps {
 
 export const ShowcaseSection: React.FC<ShowcaseSectionProps> = () => {
 
-
+  const [isHeaderVisible, headerVisible] = useVisibility<HTMLDivElement>(3000);
 
 return (
   <section
@@ -22,10 +26,13 @@ return (
   id="showcase"
   >
 
-<h1 className={styles.header}>
-  Deep, deep in the dark metaocean...
-</h1>
+<ScrollAnimation animateIn="fadeIn"  duration={4} animateOnce>
+  <h1 className={styles.header}>
+    Deep, deep in the dark metaocean...
+  </h1>
+</ScrollAnimation>
 
+<ScrollAnimation animateIn="fadeIn"  duration={4} delay={1500} animateOnce >
 <div className={styles.dual}>
     <div className={styles.text}>
       <h1>
@@ -45,6 +52,7 @@ return (
     </div>
  
 </div>
+</ScrollAnimation>
 
   </section>
 )

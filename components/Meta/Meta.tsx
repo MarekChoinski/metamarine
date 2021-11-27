@@ -15,6 +15,7 @@ export const Meta: React.FC<MetaProps> = ({
 }) => (
   <Head>
     <title>{title}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
     <meta property="og:title" content={title} />
     <meta
       name="viewport"

@@ -24,7 +24,7 @@
   font-size: 3rem;
   text-align: center;
   margin: 0;
-  padding: 8rem 0 12rem 0;
+  padding: 0 0 12rem 0;
   font-weight: 500;
 
   background: linear-gradient(
@@ -52,7 +52,7 @@
   width: 40%;
   padding-right: 2rem;
   h1 {
-    @extend .header;
+    // @extend .header;
     padding: 0;
     font-size: 2rem;
     text-align: left;
