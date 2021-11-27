@@ -29,3 +29,7 @@ a {
     background-position: 0% 0%;
   }
 }
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}

@@ -1,9 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import React from 'react';
+import React, { useState } from 'react';
+import { Collapse } from 'react-collapse';
 import { Meta } from '../components/Meta/Meta';
 import { Navbar } from '../components/Navbar/Navbar';
+import Plus from '../components/Plus/Plus';
 import {Timer} from '../components/Timer/Timer';
 import { FaqSection } from '../sections/FaqSection/FaqSection';
 import { HeroSection } from '../sections/HeroSection/HeroSection';
@@ -13,6 +15,10 @@ import p from '../utils/prefixImages';
 
 
 const Home: NextPage = () => {
+  const [q1, setQ1] = useState(false);
+  console.log(q1);
+  
+  
   return (
     <>
     <Meta
@@ -21,7 +27,6 @@ const Home: NextPage = () => {
       <HeroSection />
       <ShowcaseSection />
       <FaqSection />
-
     </>
   )
 }
