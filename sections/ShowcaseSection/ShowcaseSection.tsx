@@ -14,6 +14,7 @@ export const ShowcaseSection: React.FC<ShowcaseSectionProps> = () => {
 return (
   <section
   className={styles.container}
+  id="showcase"
   >
 
 <h1 className={styles.header}>

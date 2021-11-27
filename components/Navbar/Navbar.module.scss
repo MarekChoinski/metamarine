@@ -1,9 +1,4 @@
-$screen-sm-min: 768px;
-$link-color: white;
-$link-hover-color: darken($link-color, 15%);
-$warm-gray: #e9e7df;
-$navbarBgColor: black;
-$teal: rgb(0, 227, 227);
+@use "styles/variables" as *;
 
 .navbar {
   padding: 0 3rem;
@@ -193,6 +188,31 @@ $teal: rgb(0, 227, 227);
   font-size: 1.2rem;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 .marine {
-  color: $teal;
+  padding: 0;
+  font-size: 2rem;
+  text-align: left;
+  background: linear-gradient(
+    45deg,
+    hsl(324, 100%, 50%),
+    rgb(5, 222, 218),
+    hsl(324, 100%, 50%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
 }

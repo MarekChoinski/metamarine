@@ -1,0 +1,39 @@
+import Head from "next/head";
+
+export interface MetaProps {
+  title: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
+export const Meta: React.FC<MetaProps> = ({
+  title,
+  description,
+  image,
+  url
+}) => (
+  <Head>
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0"
+    ></meta>
+    {description && (
+      <>
+        <meta property="og:description" content={description} />
+        <meta name="description" content={description} />
+      </>
+    )}
+    {image && typeof window !== "undefined" && (
+      <meta
+        property="og:image"
+        content={window.location.origin + "/img" + image}
+      />
+    )}
+    {url && typeof window !== "undefined" && (
+      <meta property="og:url" content={window.location.origin + url} />
+    )}
+  </Head>
+);

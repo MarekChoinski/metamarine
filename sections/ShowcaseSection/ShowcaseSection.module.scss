@@ -1,3 +1,5 @@
+@use "styles/variables" as *;
+
 .container {
   width: 100vw;
   background-color: black;
@@ -26,9 +28,9 @@
 
   background: linear-gradient(
     45deg,
-    hsl(181, 100%, 50%),
-    #2c0bd0,
-    hsl(181, 100%, 50%)
+    hsl(324, 100%, 50%),
+    rgb(5, 222, 218),
+    hsl(324, 100%, 50%)
   );
   background-clip: text;
   -webkit-background-clip: text;
@@ -39,7 +41,7 @@
 
 .dual {
   width: 80%;
-  max-width: 1300px;
+  max-width: $containerWidth;
   display: flex;
   height: auto;
   color: white;
