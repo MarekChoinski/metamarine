@@ -7,16 +7,20 @@ export interface TimerProps {
 }
 
 export const Timer: React.FC<TimerProps> = ({ date }) => {
+  const renderer: CountdownRendererFn = ({
+    hours,
+    minutes,
+    seconds,
+    completed
+  }) => {
+    return !completed ? (
+      <span className={styles.timer}>
+        {hours}:{minutes}:{seconds}
+      </span>
+    ) : (
+      <span className={styles.timer}>You are good to go!</span>
+    );
+  };
 
-const renderer: CountdownRendererFn = ({ hours, minutes, seconds, completed }) => {
-  return !completed?
-        (<span className={styles.timer}>{hours}:{minutes}:{seconds}</span>) :
-        (<span className={styles.timer}>You are good to go!</span>);
+  return <Countdown date={date} renderer={renderer} />;
 };
-
-return <Countdown
-    date={date}
-    renderer={renderer}
-  />
-};
-

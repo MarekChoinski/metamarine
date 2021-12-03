@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from "./FaqSection.module.scss";
+import styles from "./FooterSection.module.scss";
 import { Collapse } from "react-collapse";
 import Plus from "../../components/Plus/Plus";
 
-export const FaqSection: React.FC = () => {
+export const FooterSection: React.FC = () => {
   const [q1, setQ1] = useState(false);
   const [q2, setQ2] = useState(false);
   const [q3, setQ3] = useState(false);

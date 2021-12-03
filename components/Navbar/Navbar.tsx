@@ -120,11 +120,7 @@ export const Navbar: React.FC = () => {
           <li>
             <Link href="/hire-us">
               <a>
-                <button
-                  className={styles.aquarium}
-                >
-                  Your Aquarium
-                </button>
+                <button className={styles.aquarium}>Your Aquarium</button>
               </a>
             </Link>
           </li>
