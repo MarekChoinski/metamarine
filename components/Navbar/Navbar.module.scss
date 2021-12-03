@@ -27,11 +27,11 @@
 
   @media (max-width: $screen-sm-min) {
     min-height: 67px;
+    padding: 0 1rem;
   }
 }
 
 .container {
-  // @extend .container;
   display: flex;
   align-items: center;
   min-height: 85px;
