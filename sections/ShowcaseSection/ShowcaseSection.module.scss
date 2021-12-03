@@ -79,64 +79,7 @@
   }
 }
 
-// ANIMATION
-
-.fadecycle {
+.slider {
   width: 60%;
-  // margin: 3rem auto;
   padding-left: 6rem;
-  position: relative;
-
-  img {
-    opacity: 0;
-
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    -webkit-animation-name: fade;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 6s;
-    animation-name: fade;
-    animation-iteration-count: infinite;
-    animation-duration: 6s;
-  }
-}
-
-// Animation settings
-$totalTime: 20s;
-$items: 10;
-$animationSpeed: 1;
-
-// Calculate animation time in seconds (how long the fade lasts)
-$animationTime: 0s + $totalTime / ($items * $animationSpeed * 2);
-// Calculate show time in seconds (how long the element is displayed)
-$showTime: (0s + $totalTime - ($animationTime * $items)) / $items;
-
-// Set animation for each element
-@for $i from 1 through $items {
-  .fadecycle > *:nth-child(#{$i}) {
-    // Delay is increased for each item
-    // Starting with an offset of -$animationTime so the first element is displayed on load
-    $delay: -$animationTime + ($animationTime + $showTime) * ($i - 1);
-    animation: fadeinout $totalTime linear $delay infinite;
-  }
-}
-
-// Calculate percentages of the display time for keyframes
-$animationPercentage: 0% + 100 * (math.div($animationTime, $totalTime));
-$showPercentage: 0% + 100 * (math.div($showTime, $totalTime));
-
-@keyframes fadeinout {
-  0% {
-    opacity: 0;
-  }
-  #{$animationPercentage},
-  #{$animationPercentage + $showPercentage} {
-    opacity: 1;
-  }
-  #{$showPercentage + $animationPercentage * 2},
-  100% {
-    opacity: 0;
-  }
 }

@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "./ShowcaseSection.module.scss";
 import p from '../../utils/prefixImages';
-import { Timer } from "../../components/Timer/Timer";
-import { useVisibility } from "../../utils/useVisibility";
-import classnames from "classnames";
 import "animate.css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
+import { Carousel } from "../../components/Carousel/Carousel";
 
 // for file in *.png ; do ffmpeg -i "$file" -vf scale=900:-1 "small-${file}"; done
 // for file in small-* ; do ffmpeg -i "$file" -vf  "crop=750:500:30:225" "crop-${file}"; done
@@ -18,7 +16,6 @@ export interface ShowcaseSectionProps {
 
 export const ShowcaseSection: React.FC<ShowcaseSectionProps> = () => {
 
-  const [isHeaderVisible, headerVisible] = useVisibility<HTMLDivElement>(3000);
 
 return (
   <section
@@ -43,13 +40,15 @@ return (
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe natus praesentium velit nostrum esse, nam tempora necessitatibus voluptas, provident earum maxime vel nihil exercitationem neque! Numquam odit excepturi delectus atque.
   </p>
 </div>
-  <div className={styles.fadecycle}>
-    {[...Array(10)].map((_,i)=> {
-      return (<img src={p(`fishes/crop-small-${i}.png`)} alt=""/>);
-    })}
-    
+    <div className={styles.slider}>
+    <Carousel>
+      {[...Array(10)].map((_,i)=> {
+        return (<img src={p(`fishes/crop-small-${i}.png`)} alt=""/>);
+      })}
+    </Carousel>
 
     </div>
+
  
 </div>
 </ScrollAnimation>

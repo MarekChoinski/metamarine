@@ -33,3 +33,9 @@ a {
 .ReactCollapse--collapse {
   transition: height 500ms;
 }
+
+.slick-arrow {
+  width: 48px !important;
+  height: auto !important;
+  opacity: 0.5 !important;
+}
