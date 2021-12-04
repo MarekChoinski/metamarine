@@ -1,10 +1,9 @@
 @use "styles/variables" as *;
 
 .section {
-  background-color: black;
+  background-color: rgb(19, 19, 19);
   width: 100vw;
   color: white;
-  padding-bottom: 10rem;
 }
 
 .container {
@@ -17,64 +16,96 @@
   }
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
-.header {
-  font-size: 3rem;
-  margin: 0;
-  font-weight: 500;
-
-  background: linear-gradient(
-    45deg,
-    hsl(324, 100%, 50%),
-    rgb(5, 222, 218),
-    hsl(324, 100%, 50%)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+.dualBox {
+  width: 100%;
+  display: flex;
+  padding: 5rem 0 0 0;
 
   @media (max-width: $screen-sm-min) {
-    font-size: 2rem;
+    flex-direction: column;
+    padding-top: 0;
   }
 }
-.questions {
-  h4 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: normal;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+
+.linkSection {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  @media (max-width: $screen-sm-min) {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2.3rem;
 
     @media (max-width: $screen-sm-min) {
-      font-size: 1rem;
+      font-size: 2rem;
     }
   }
+}
 
-  svg {
-    filter: invert(1);
-    transform: scale(1.2);
-    margin-right: 0.5rem;
+.linkContainer {
+  display: flex;
+
+  @media (max-width: $screen-sm-min) {
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+}
+
+.linkBox {
+  width: 50%;
+
+  h2 {
+    font-size: 1rem;
+    opacity: 0.7;
+    padding: 1rem 0 1rem 0;
+  }
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+
+  li {
+    margin-right: 1.5rem;
+
+    img {
+      height: 30px;
+    }
+  }
+}
+
+.logo {
+  width: 50%;
+  order: 2;
+
+  @media (max-width: $screen-sm-min) {
+    width: 100%;
   }
 
-  p {
-    opacity: 0.78;
-    line-height: 2;
-    display: block;
-    margin: 0;
-    cursor: pointer;
+  img {
+    border-radius: 100%;
+    width: 300px;
+
+    @media (max-width: $screen-sm-min) {
+      width: 50%;
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+.copyright {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  text-align: center;
+  margin: 0;
+  padding: 5rem 0 2rem 0;
+
+  @media (max-width: $screen-sm-min) {
+    padding-top: 2rem;
   }
 }

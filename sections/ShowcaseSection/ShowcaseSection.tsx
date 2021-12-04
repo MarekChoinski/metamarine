@@ -33,7 +33,12 @@ export const ShowcaseSection: React.FC = () => {
           <div className={styles.slider}>
             <Carousel>
               {[...Array(10)].map((_, i) => {
-                return <img src={p(`fishes/crop-small-${i}.png`)} alt="" />;
+                return (
+                  <img
+                    src={p(`fishes/crop-small-${i}.png`)}
+                    alt={`Fish number ${i}`}
+                  />
+                );
               })}
             </Carousel>
           </div>
